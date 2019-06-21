@@ -3,4 +3,22 @@ spring:
     host: 192.168.80.130
     username: guest
     password: guest
+    # 开启发送确认
+    publisher-confirms: true
+    # 开启发送失败回退
+    publisher-returns: true
+    listener:
+      direct:
+        # 开启ACK
+        acknowledge-mode: manual
+      simple:
+        #并发消费者的初始化值
+        concurrency: 10
+        #并发消费者的最大值
+        max-concurrency: 20
+        #每个消费者每次监听时可拉取处理的消息数量
+        prefetch: 5
+        # 开启ACK
+        acknowledge-mode: manual
+
 #    virtual-host:

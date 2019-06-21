@@ -11,9 +11,9 @@ public class MyAMQPConfig {
 
 
     @Bean
+    //序列化
     public MessageConverter messageConverter() {
         return new Jackson2JsonMessageConverter();
     }
-
 
 }
